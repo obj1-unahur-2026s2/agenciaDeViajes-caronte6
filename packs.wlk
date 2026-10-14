@@ -1,8 +1,11 @@
 class Pack{
-    method duracion()
+    const cordinador
+    const beneficios
+    
+    method duracion() = diasQueQuedan
     method precioBase()
-    method beneficioEspeciales()
-    method cordinadorAcargo()
+    method beneficioEspeciales()=beneficios
+    method cordinadorAcargo()=cordinador
     method destino() // ambas sub clases requieren consultar el destino
 }
 
