@@ -8,7 +8,7 @@ class Cordinador{
     method viajesRealizados()= viajesRealizados
     method estaMotivado() 
     method añoDeExperiencia() = añosDeExperiencia
-    method hacerUnViaje() {viajesRealizados+=1}
+    method viajar(cantidadDeViajes) {viajesRealizados+=cantidadDeViajes}
     method cambiarRol(nuevoRol){
         if(![guia,asistenteLogico,acompañante].contains(nuevoRol)){
             self.error("no existe ese rol")
