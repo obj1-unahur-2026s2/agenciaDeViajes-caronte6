@@ -1,11 +1,16 @@
 class Beneficio{
     const tipo //string
-    const costo
-    method tipo() = tipo
+    var costo
+    var estaVigente = true
+    method tipo()  //string
     method costo() = costo
-    method estaVigente()
-}
-
-class TransladoPrivado inherits Beneficio(tipo="traslado privado",costo=0){
-
+    method estaVigente()= estaVigente
+    
+    method desabilitarBeneficio() {
+      estaVigente= false
+    }
+    method habilitarBeneficio() {
+      estaVigente= true
+    }
+    method cambiarCostoA(nuevoCosto){costo=nuevoCosto}
 }
