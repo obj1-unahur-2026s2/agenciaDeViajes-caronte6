@@ -1,0 +1,33 @@
+import cordinadores.*
+import packs.*
+import beneficios.*
+import roles.*
+import lugares.*
+
+
+
+
+describe "calculo de valores finales de packs" {
+    const uruguay = new Lugar()
+    const peru = new Lugar()
+    const chile = new Lugar()
+    const juan = new Cordinador(rol=guia,añosDeExperiencia=2)
+    const beneficio1 = new Beneficio(tipo="Seguro adicionales", costo= 100)
+    const beneficio2 = new Beneficio(tipo="Acceso a salas VIP", costo= 10)
+    const beneficio3 = new Beneficio(tipo="Traslado privados", costo= 20)
+    const packChile = new PackNacional(duracion = 2,cordinador=juan,beneficios=[beneficio1,beneficio2],destino=chile,precioBase= 50)
+    const packPeru = new PackNacional(duracion = 5,cordinador=juan,beneficios=[],destino=peru,precioBase= 15)
+    const packUruguay= new PackInternacional(duracion = 5,cordinador=juan,beneficios=[],destino=uruguay,precioBase= 40,escalas=10)
+  method initialize(){
+  }
+  test "pack nacional sin beneficios su precio final es igual a su base" {
+    
+    assert.equals(15, packPeru.precioFinal())
+  }
+  test "pack nacional con beneficios vigentes se suman a precio base"{
+    assert.equals(160, packChile.precioFinal())
+  }
+  test "pack Internacional sin beneficios se le aplica un recargo del 20 "{
+    assert.equals(48, packUruguay.precioFinal())
+  }
+}
