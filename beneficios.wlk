@@ -2,7 +2,7 @@ class Beneficio{
     const tipo //string
     var costo
     var estaVigente = true
-    method tipo()  //string
+    method tipo()=tipo  //string
     method costo() = costo
     method estaVigente()= estaVigente
     
