@@ -25,4 +25,5 @@ class Cordinador{
     }
 
     method aumentarAñosDeExperiencia(){añosDeExperiencia+=1}
+    method esAltamenteCalificado()= viajesRealizados>20 && rol.esCalificado(self)
 }
