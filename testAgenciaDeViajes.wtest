@@ -31,3 +31,21 @@ describe "calculo de valores finales de packs" {
     assert.equals(48, packUruguay.precioFinal())
   }
 }
+
+describe "tests de roles,cordinadores" {
+  const juan = new Cordinador(viajesRealizados=21,rol=guia,añosDeExperiencia=3)
+  const nahuel = new Cordinador(viajesRealizados=15,rol=asistenteLogistico,añosDeExperiencia=3)
+  const facu = new Cordinador(viajesRealizados=21,rol=acompañante,añosDeExperiencia=2)
+  test "un guia con 21 viajes es calificado" {
+    assert.that(juan.esAltamenteCalificado())
+  }
+  test "un asistente logico con 3 "{
+    
+    assert.that(!nahuel.esAltamenteCalificado())
+  }
+  test "un acompañante de mas de 20 viajes realizados es calificado"{
+    
+    assert.that(facu.esAltamenteCalificado())
+  }
+
+}
